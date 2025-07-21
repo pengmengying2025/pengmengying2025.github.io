@@ -4,7 +4,6 @@ title: About
 permalink: /
 subtitle: Welcome!
 
-<br><br>
 profile:
   align: right
   image: mengyinggit.PNG
