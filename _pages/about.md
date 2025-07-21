@@ -2,9 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: 
-
-Welcome!
+subtitle: <br><br> Welcome!
 
 profile:
   align: right
