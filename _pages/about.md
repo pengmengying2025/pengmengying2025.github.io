@@ -2,7 +2,6 @@
 layout: about
 title: About
 permalink: /
-<br><br><br>
 subtitle: Welcome!
 
 <br><br>
