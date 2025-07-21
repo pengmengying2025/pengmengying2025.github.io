@@ -23,6 +23,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
+<br><br>
+
 I am a Ph.D. candidate at the [Graduate School of Economics](https://www.econ.hit-u.ac.jp/eng/) and a Specially Appointed Assistant Professor (特任助教) in Economics at the [Hitotsubashi Institute for Advanced Study](https://hias.hit-u.ac.jp/) (HIAS), Hitotsubashi University in Tokyo, Japan.
 
 My research focuses on applied microeconomics, particularly development economics and economics of education. I study human capital development, the evaluation of education policies, college choice, and disparities in educational access and outcomes, especially those related to race and ethnicity, gender, socioeconomic status, and other forms of disadvantage.
