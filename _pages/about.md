@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <br><br> Welcome!
+subtitle: <br><br> 
 
 profile:
   align: right
@@ -25,6 +25,8 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
+
+Welcome!
 
 I am a Ph.D. candidate at the [Graduate School of Economics](https://www.econ.hit-u.ac.jp/eng/) and a Specially Appointed Assistant Professor (特任助教) in Economics at the [Hitotsubashi Institute for Advanced Study](https://hias.hit-u.ac.jp/) (HIAS), Hitotsubashi University in Tokyo, Japan.
 
