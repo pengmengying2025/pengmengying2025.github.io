@@ -11,7 +11,7 @@ profile:
   more_info: |
     <p>2-1 Naka, Kunitachi<p> 
     <p>Tokyo, Japan 186-8601<p>
-    <br>Email me: <a href="mailto:mengying.peng25@gmail.com">mengying.peng25@gmail.com</a>
+    <br>Email: <a href="mailto:mengying.peng25@gmail.com">mengying.peng25@gmail.com</a>
     <a href="mailto:mengying.peng@r.hit-u.ac.jp">mengying.peng@r.hit-u.ac.jp</a> <br><br>
 
 
