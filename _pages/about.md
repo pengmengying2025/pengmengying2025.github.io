@@ -8,6 +8,10 @@ profile:
   align: right
   image: mengyinggit.PNG
   image_circular: false # crops the image to make it circular
+  more_info: |
+  2-1 Naka, Kunitachi, Tokyo 186-8601, Japan
+  Email: [mengying.peng25@gmail.com](mailto:mengying.peng25@gmail.com)
+  Alternate: [mengying.peng@r.hit-u.ac.jp](mailto:mengying.peng@r.hit-u.ac.jp)
 
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
