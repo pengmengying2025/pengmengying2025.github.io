@@ -2,11 +2,11 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Mengying Peng
+   # - name: Date of Birth
+    #  value: 14th March 1879
     - name: Languages
-      value: English, German
+      value: English, Japanese(N1), Chinese (Native), French (Basic)
 
 - title: Education
   type: time_table
