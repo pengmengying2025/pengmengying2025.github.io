@@ -9,9 +9,9 @@ profile:
   image: mengyinggit.PNG
   image_circular: false # crops the image to make it circular
   more_info: |
-    <strong>Address:</strong>
-    2-1 Naka, Kunitachi
-    Tokyo, Japan 186-8601<br>
+    <strong>Address:</strong><br>
+    2-1 Naka, Kunitachi<br>
+    Tokyo, Japan 186-8601<br><br>
     <strong>Email:</strong> <a href="mailto:mengying.peng25@gmail.com">mengying.peng25@gmail.com</a>
     <a href="mailto:mengying.peng@r.hit-u.ac.jp">mengying.peng@r.hit-u.ac.jp</a> <br><br>
 
