@@ -6,7 +6,7 @@ subtitle: <br><br>
 
 profile:
   align: right
-  image: mengying111.png
+  image: mengyingprofile.png
   image_circular: false # crops the image to make it circular
   more_info: |
     <strong>Address:</strong><br>
