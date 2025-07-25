@@ -9,7 +9,7 @@ last_name: Peng
 contact_note: >
   Feel free to reach out via email — it's the best way to contact me.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Academic website of Mengying Peng, PhD candidate in Economics at Hitotsubashi University in Tokyo, Japan. Research in applied, development, and education economics.
+  Academic website of Mengying Peng, PhD candidate in Economics at Hitotsubashi University in Tokyo, Japan. Research in applied economics, development economics, and economics of education in China, India, and the US.
 footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. 
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio theme</a>.
