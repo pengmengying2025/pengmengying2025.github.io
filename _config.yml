@@ -13,7 +13,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. 
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio theme</a>.
-keywords: applied economics, development economics, economics of education, education policy, labor economics # add your own keywords or leave empty
+keywords: ["applied economics", "development economics", "economics of education", "education policy", "labor economics",  "affirmative action", "China", "India", "ethnicity", "race", "the US", "peer effects", "inequality", "college choice"] # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: laifu10.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
