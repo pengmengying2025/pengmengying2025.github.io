@@ -1,11 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - pengmengying2025
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
+  - pengmengying2025/pengmengying2025.github.io
   - jekyll/jekyll
   - twbs/bootstrap
   - jquery/jquery
