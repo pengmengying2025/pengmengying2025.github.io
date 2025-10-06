@@ -38,4 +38,4 @@ I am a Ph.D. candidate in Economics at the [Graduate School of Economics](https:
 
 My research focuses on applied microeconomics, particularly development economics and economics of education. I study human capital development, the evaluation of education policies, college choice, and disparities in educational access and outcomes, especially those related to race and ethnicity, gender, socioeconomic status, and other forms of disadvantage.
 
-You can pronounce my name as "**Meng-Ying Peng**." 
+You can pronounce my name as **"Muhng-ying Puhng" (メンイン・ペン).** 
