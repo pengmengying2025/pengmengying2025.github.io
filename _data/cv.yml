@@ -91,11 +91,11 @@
   contents:
     - year: 2026
       items:
-        - JEA Spring (scheduled)
-        - University of Tokyo–Harvard-Yenching Institute Joint Training Program
-        - GRIPS
-        - AEFP 2026
         - SEA 2026 (scheduled)
+        - University of Tokyo–Harvard-Yenching Institute Joint Training Program
+        - JEA Spring
+        - GRIPS/JADE Development Seminar
+        - AEFP 2026
     - year: 2025
       items:
         - JADE Young 2025
