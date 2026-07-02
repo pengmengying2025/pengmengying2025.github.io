@@ -47,6 +47,14 @@ p.location {
   white-space: nowrap;
 }
 
+// Allow long date labels (e.g. "Apr 2026 (starting)", "Dec 2025 – present")
+// to wrap inside the year column instead of overflowing onto the entry title.
+.cv span.badge {
+  white-space: normal;
+  display: inline-block;
+  line-height: 1.25;
+}
+
 i.iconlocation {
   color: var(--global-theme-color);
   font-size: 0.8rem;

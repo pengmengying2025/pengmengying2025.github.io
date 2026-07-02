@@ -3,95 +3,143 @@
   contents:
     - name: Full Name
       value: Mengying Peng
-   # - name: Date of Birth
-    #  value: 14th March 1879
-    - name: Languages
-      value: English, Japanese(N1), Chinese (Native), French (Basic)
+    - name: Address
+      value: 2-1 Naka, Kunitachi, Tokyo, Japan 186-8601
+    - name: Email
+      value: '<a href="mailto:mengying.peng@r.hit-u.ac.jp">mengying.peng@r.hit-u.ac.jp</a>, <a href="mailto:mengying.peng25@gmail.com">mengying.peng25@gmail.com</a>'
+
+- title: Academic Appointments
+  type: time_table
+  contents:
+    - title: Specially Appointed Assistant Professor, Economics
+      institution: Hitotsubashi Institute for Advanced Study (HIAS), Hitotsubashi University, Tokyo, Japan
+      year: Dec 2025 – present
+    - title: Part-time Lecturer, Development Economics (in Japanese)
+      institution: Tsuda University, Tokyo, Japan
+      year: Apr 2026 – present
+    - title: Specially Appointed Research Associate, Economics
+      institution: Hitotsubashi Institute for Advanced Study (HIAS), Hitotsubashi University, Tokyo, Japan
+      year: Jul 2025 – Nov 2025
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D., Economics
+      institution: Hitotsubashi University, Tokyo, Japan
+      year: Apr 2021 – Oct 2025
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+        - 'Fields: Development Economics, Economics of Education, Experimental Economics'
+        - 'Dissertation: <em>Pathways to Equity: Investigating Barriers, Practices, and Policies in Education</em>'
+    - title: Visiting Ph.D. Student
+      institution: Arizona State University (MLF Teachers College), Tempe, AZ, USA
+      year: 2023 – 2024
+    - title: M.A., Economics
+      institution: Hitotsubashi University, Tokyo, Japan
+      year: Apr 2019 – Mar 2021
+    - title: B.Admin, Accounting
+      institution: Hunan University, Changsha, China
+      year: Sep 2011 – Jun 2015
 
-- title: Experience
-  type: time_table
-  contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+- title: Publications
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - 'Peer Effects on College Choice: Evidence from Affirmative Action in China, with Xiaoyang Ye, <em>Labour Economics</em>, 2025.'
+
+- title: Working Papers
+  type: list
+  contents:
+    - 'Information and Preference Revision in High-Stakes Educational Choice: Experimental Evidence from Rural China — with Xin Li and Xiaoyang Ye'
+    - 'Mind the Skill Gap: Relationship between Economic Growth and Human Capital — with John M. Fredericks and Margarita Pivovarova'
+    - 'When Ramadan Meets the College Entrance Exam: The Effects on Student Outcomes in China — with Xiaoyang Ye'
+    - 'Unintended Consequences of Affirmative Action in Higher Education: Evidence from India — with Takashi Kurosaki'
+    - 'International Agricultural Price Shocks and Child Labor: The Role of Crop Choice in Rural China — with Jingcheng Jiang'
+    - 'Bridging The Gaps: How Teacher Diversity Shapes Student Achievement in the United States — with Margarita Pivovarova and Jeanne M. Powers'
+
+- title: Work in Progress
+  type: list
+  contents:
+    - 'Identifying Hidden Mathematical Talent: Experimental Evidence from Rural China — with Stephen L. DesJardins and Xiaoyang Ye'
+    - 'Decentralized Health Insurance Policy and Healthcare Access: Evidence from Indian States — with Tanika Chakraborty and Yuko Mori'
+
+- title: Grants, Fellowships, and Awards
+  type: time_table
+  contents:
+    - year: 2026
+      items:
+        - JSPS KAKENHI Grant-in-Aid for Early-Career Scientists (Grant No. 26K16354), Principal Investigator
+    - year: 2025
+      items:
+        - Hitotsubashi International Fellow Program (Hitotsubashi University)
+    - year: 2024
+      items:
+        - APPAM 2024 Equity & Inclusion Student Fellowship
+        - 19th "Chunhui Cup" Doctoral Talent Exchange Program Travel Grant (Ministry of Education of China)
+        - Hitotsubashi International Fellow Program (Hitotsubashi University)
+        - 'Joint Usage and Research Center Programs at IER, Hitotsubashi University, Co-Investigator (PI: Margarita Pivovarova)'
+        - Scholarship for Graduate Students Studying Abroad (Hitotsubashi University)
+        - AEFP Student Travel Grant Award
+    - year: 2023
+      items:
+        - Hitotsubashi International Fellow Program – Outbound (Hitotsubashi University)
+        - AEFP Student Travel Grant Award
+        - CSWEP Mentoring Workshop Travel Grant by AEA
+        - Excellent Paper of the 2nd Peking University Summer School in Education (Peking University)
+        - Education Finance and Policy Outstanding Young Scholars Program Scholarship (Peking University)
+
+- title: Presentations
+  type: time_table
+  contents:
+    - year: 2026
+      items:
+        - JEA Spring (scheduled)
+        - University of Tokyo–Harvard-Yenching Institute Joint Training Program
+        - GRIPS
+        - AEFP 2026
+        - SEA 2026 (scheduled)
+    - year: 2025
+      items:
+        - JADE Young 2025
+        - SEA 2025
+        - Kobe U
+        - AEA/ASSA 2025 (Poster)
+        - Young Scholars Forum on Education Finance Research in China
+    - year: 2024
+      items:
+        - 9th Nanhu International Young Scholars Forum
+        - 19th "Chunhui Cup" Doctoral Talent Exchange Program
+        - AASLE 2024
+        - SEA 2024
+        - Workshop on Empirical Research in Developing Countries
+        - AERA 2024 (Poster)
+        - 2024 CES North America
+        - AEFP 2024 (Poster)
+    - year: 2023
+      items:
+        - APPAM 2023
+        - AEFP 2023
+    - year: 2022
+      items:
+        - AASLE 2022
+        - Peking University (Poster)
+        - Xiangjiang Forum 2022
+
+- title: Mentorship
+  type: list
+  contents:
+    - Doctoral committee member, John M. Fredericks, Arizona State University
+
+- title: Service
+  type: list
+  contents:
+    - 'Conference Service: AEFP (Reviewer), AERA (Reviewer), SEA 2024 (Chair), CES 2024 (Discussant), APPAM 2023 (Discussant), AASLE 2022 (Chair), Xiangjiang Forum 2022 (Discussant)'
+    - 'Journal Referee: PLOS One, Research in Higher Education'
+
+- title: Software and Programming
+  type: list
+  contents:
+    - Stata, Python, LaTeX, LimeSurvey (custom survey platform development), R
+
+- title: Languages
+  type: list
+  contents:
+    - English, Japanese (N1), Chinese (Native), French (Basic)

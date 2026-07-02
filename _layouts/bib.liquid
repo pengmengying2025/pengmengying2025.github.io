@@ -58,48 +58,44 @@
         {% assign author_array_limit = site.max_author_limit %}
       {% endif %}
 
-      {%- for author in entry.author_array limit: author_array_limit -%}
-        {% assign author_is_self = false %}
+      {%- comment -%} Show only coauthors, prefixed with "with"; the site owner's own name is hidden. {%- endcomment -%}
+      {%- assign coauthor_count = 0 -%}
+      {%- for author in entry.author_array -%}
+        {%- assign owner_last = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+        {%- assign is_owner = false -%}
+        {%- if site.scholar.last_name contains owner_last and site.scholar.first_name contains author.first -%}
+          {%- assign is_owner = true -%}
+        {%- endif -%}
+        {%- unless is_owner -%}{%- assign coauthor_count = coauthor_count | plus: 1 -%}{%- endunless -%}
+      {%- endfor -%}
+      {%- if coauthor_count > 0 -%}with {% endif -%}
+      {%- assign rendered = 0 -%}
+      {%- for author in entry.author_array -%}
         {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
         {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
-        {% if site.scholar.last_name contains author_last_name %}
-          {% if site.scholar.first_name contains author.first %}
-            {% assign author_is_self = true %}
-          {% endif %}
+        {%- assign author_is_self = false -%}
+        {%- if site.scholar.last_name contains author_last_name and site.scholar.first_name contains author.first -%}
+          {%- assign author_is_self = true -%}
         {%- endif -%}
-        {% assign coauthor_url = null %}
-        {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
-        {% if site.data.coauthors[clean_last_name] %}
-          {%- for coauthor in site.data.coauthors[clean_last_name] -%}
-            {% if coauthor.firstname contains author.first %}
-              {%- assign coauthor_url = coauthor.url -%}
-              {% break %}
-            {%- endif -%}
-          {% endfor %}
-        {%- endif -%}
-
-        {%- if forloop.length > 1 -%}
-          {% if forloop.first == false -%}
-            {%- if forloop.length > 2 %}, {% elsif forloop.length == 2 %}  {% endif %}
-          {%- endif %}
-          {%- if forloop.last and author_array_limit == author_array_size %}and {% endif -%}
-        {% endif %}
-        {%- if author_is_self -%}
-          <em>
-            {{- author.first }}
-            {{ author_last_html -}}
-          </em>
-        {%- else -%}
+        {%- unless author_is_self -%}
+          {%- assign rendered = rendered | plus: 1 -%}
+          {%- assign coauthor_url = null -%}
+          {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
+          {%- if site.data.coauthors[clean_last_name] -%}
+            {%- for coauthor in site.data.coauthors[clean_last_name] -%}
+              {%- if coauthor.firstname contains author.first -%}
+                {%- assign coauthor_url = coauthor.url -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+          {%- if rendered > 1 %}{% if coauthor_count > 2 %}, {% else %} {% endif %}{% if rendered == coauthor_count %}and {% endif %}{% endif -%}
           {%- if coauthor_url -%}
-            <a href="{{ coauthor_url }}">
-              {{- author.first }}
-              {{ author_last_html -}}
-            </a>
+            <a href="{{ coauthor_url }}">{{- author.first }} {{ author_last_html -}}</a>
           {%- else -%}
-            {{- author.first }}
-            {{ author_last_html -}}
-          {% endif %}
-        {%- endif -%}
+            {{- author.first }} {{ author_last_html -}}
+          {%- endif -%}
+        {%- endunless -%}
       {% endfor %}
       {%- assign more_authors = author_array_size | minus: author_array_limit -%}
 

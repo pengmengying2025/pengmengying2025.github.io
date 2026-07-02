@@ -1,34 +1,39 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+# Coauthor homepage links. Keyed by lowercase last name; the `firstname`
+# list must contain the first-name form used in the .bib author field so
+# al-folio can match and link the coauthor automatically.
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"ye":
+  - firstname: ["Xiaoyang"]
+    url: https://xiaoyangye.github.io/
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"kurosaki":
+  - firstname: ["Takashi"]
+    url: https://www.ier.hit-u.ac.jp/English/faculty/kurosaki.html
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"jiang":
+  - firstname: ["Jingcheng"]
+    url: https://sites.google.com/view/jingchengjiang/home
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"pivovarova":
+  - firstname: ["Margarita"]
+    url: https://search.asu.edu/profile/2164016
 
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
+"powers":
+  - firstname: ["Jeanne M.", "Jeanne"]
+    url: https://search.asu.edu/profile/384095
 
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
+"fredericks":
+  - firstname: ["John M.", "John"]
+    url: https://search.asu.edu/profile/5022319
 
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
+"desjardins":
+  - firstname: ["Stephen L.", "Stephen"]
+    url: https://marsal.umich.edu/directory/faculty-staff/stephen-l-desjardins
 
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"chakraborty":
+  - firstname: ["Tanika"]
+    url: https://sites.google.com/view/tanikac
+
+"mori":
+  - firstname: ["Yuko"]
+    url: https://sites.google.com/site/yukomori17/
