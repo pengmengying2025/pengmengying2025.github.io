@@ -30,6 +30,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/chinese/";
           },
+        },{id: "nav-coffee-map",
+          title: "Coffee Map",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/coffee-map/";
+          },
         },{
         id: 'social-email',
         title: 'email',
