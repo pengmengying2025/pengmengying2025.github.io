@@ -10,9 +10,7 @@ contact_note: >
   Feel free to reach out via email — it's the best way to contact me.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Academic website of Mengying Peng (彭梦莹), Specially Appointed Assistant Professor at the Hitotsubashi Institute for Advanced Study (HIAS), Hitotsubashi University, Tokyo. Research in applied microeconomics, development economics, and the economics of education.
-footer_text: >
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. 
-  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio theme</a>.
+footer_text:
 keywords: ["applied economics", "development economics", "economics of education", "education policy", "labor economics",  "affirmative action", "China", "India", "ethnicity", "race", "the US", "peer effects", "inequality", "college choice", "hitotsubashi university"] # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: laifu_icon_t.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
