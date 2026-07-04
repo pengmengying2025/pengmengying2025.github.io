@@ -29,11 +29,15 @@ nav_order: 3
     color: var(--global-text-color-light);
     line-height: 1.55;
   }
+  .yulai-name,
+  .yulai-name strong {
+    color: var(--global-theme-color) !important;
+  }
 </style>
 
 ## Yulai Gaokao AI (雨来高考 AI)
 
-[**Yulai Gaokao AI**](https://gaokao.yusoong.com) ([gaokao.yusoong.com](https://gaokao.yusoong.com)) — a public-interest, AI-powered college-application decision assistant built by Yu Soong Lab (Dr. Xiaoyang Ye). It helps Chinese students navigate the college-application process: understanding admission rules, exploring their interests and majors, refining their application lists, and getting personalized AI guidance. I am the main contributor to its matching database.
+<a class="yulai-name" href="https://gaokao.yusoong.com"><strong>Yulai Gaokao AI</strong></a> ([gaokao.yusoong.com](https://gaokao.yusoong.com)) — a public-interest, AI-powered college-application decision assistant built by Yu Soong Lab (Dr. Xiaoyang Ye). It helps Chinese students navigate the college-application process: understanding admission rules, exploring their interests and majors, refining their application lists, and getting personalized AI guidance. I am the main contributor to its matching database.
 
 *Please feel free to try it out — we'd love to hear your feedback to help us improve. 🙇🏻‍♀️*
 
