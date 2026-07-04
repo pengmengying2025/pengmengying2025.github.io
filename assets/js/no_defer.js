@@ -1,11 +1,9 @@
 // add bootstrap classes to tables
 $(document).ready(function () {
   $("table").each(function () {
-    if (determineComputedTheme() == "dark") {
-      $(this).addClass("table-dark");
-    } else {
-      $(this).removeClass("table-dark");
-    }
+    // Dark mode is disabled site-wide; never apply the dark table theme
+    // (which would render table text white and hide it on the light background).
+    $(this).removeClass("table-dark");
 
     // only select tables that are not inside an element with "news" (about page) or "card" (cv page) class
     if (
