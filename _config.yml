@@ -124,6 +124,7 @@ exclude:
   - package-lock.json
   - _pages/about_einstein.md
   - purgecss.config.js
+  - PROGRESS.md
   - README.md
   - readme_preview/
   - scripts/
