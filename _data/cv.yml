@@ -14,9 +14,11 @@
     - title: Specially Appointed Assistant Professor, Economics
       institution: Hitotsubashi Institute for Advanced Study (HIAS), Hitotsubashi University, Tokyo, Japan
       year: Dec 2025 – present
-    - title: Part-time Lecturer, Development Economics (in Japanese)
+    - title: Part-time Lecturer, Development Economics I, III & IV (in Japanese)
       institution: Tsuda University, Tokyo, Japan
       year: Apr 2026 – present
+      description:
+        - Spring, Fall, and Winter terms; 2026–27 and 2027–28 academic years
     - title: Specially Appointed Research Associate, Economics
       institution: Hitotsubashi Institute for Advanced Study (HIAS), Hitotsubashi University, Tokyo, Japan
       year: Jul 2025 – Nov 2025
@@ -48,25 +50,32 @@
 - title: Working Papers
   type: list
   contents:
-    - 'Information and Preference Revision in High-Stakes Educational Choice: Experimental Evidence from Rural China — with Xin Li and Xiaoyang Ye'
-    - 'Mind the Skill Gap: Relationship between Economic Growth and Human Capital — with John M. Fredericks and Margarita Pivovarova'
+    - 'Cognitive Skills and Economic Growth: Evidence from the Adult Workforce — with John M. Fredericks and Margarita Pivovarova. <em>Under review</em>'
+    - 'Choosing Subjects before Majors: Information and College Major Eligibility — with Xin Li and Xiaoyang Ye'
     - 'When Ramadan Meets the College Entrance Exam: The Effects on Student Outcomes in China — with Xiaoyang Ye'
     - 'Unintended Consequences of Affirmative Action in Higher Education: Evidence from India — with Takashi Kurosaki'
     - 'International Agricultural Price Shocks and Child Labor: The Role of Crop Choice in Rural China — with Jingcheng Jiang'
-    - 'Bridging The Gaps: How Teacher Diversity Shapes Student Achievement in the United States — with Margarita Pivovarova and Jeanne M. Powers'
+    - 'Unequal Access to Same-Race Teachers: Evidence from Arizona Public Schools — with Margarita Pivovarova and Jeanne M. Powers'
 
-- title: Work in Progress
+- title: Works in Progress
   type: list
   contents:
+    - 'Where Does the Bonus Count? Affirmative Action and Major Placement in China'
+    - 'Thinking Partner or Lookup Tool? How Students Use a Generative AI Assistant in China’s High-Stakes College Applications — with Xiaoyang Ye'
     - 'Identifying Hidden Mathematical Talent: Experimental Evidence from Rural China — with Stephen L. DesJardins and Xiaoyang Ye'
+    - 'Who Is Taught by a First-Year Teacher? Novice Exposure Before and After the Pandemic — with Margarita Pivovarova'
     - 'Decentralized Health Insurance Policy and Healthcare Access: Evidence from Indian States — with Tanika Chakraborty and Yuko Mori'
+    - 'Gender, Career Horizons, and Political Selection in the Chinese Party-State'
 
 - title: Grants, Fellowships, and Awards
   type: time_table
   contents:
     - year: 2026
       items:
-        - JSPS KAKENHI Grant-in-Aid for Early-Career Scientists (Grant No. 26K16354), Principal Investigator
+        - JSPS KAKENHI Grant-in-Aid for Early-Career Scientists (Grant No. 26K16354), Principal Investigator (2026–2030)
+        - 'EdFund, "Measuring Access: A New Way of Defining School Funding," Co-Investigator (2026–2027)'
+        - Outstanding Project, 2026 "Chunhui Cup" (Ministry of Education of China), Project Lead
+        - 'Google Antigravity research access award: six months of the highest usage tier with Gemini 4 Argon'
     - year: 2025
       items:
         - Hitotsubashi International Fellow Program (Hitotsubashi University)
@@ -89,6 +98,9 @@
 - title: Presentations
   type: time_table
   contents:
+    - year: 2027
+      items:
+        - AEA/ASSA 2027 (scheduled)
     - year: 2026
       items:
         - SEA 2026 (scheduled)
