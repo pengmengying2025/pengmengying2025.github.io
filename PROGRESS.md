@@ -19,6 +19,7 @@ _Last updated: 2026-11-05_
 - **2026-11-05, deploy fix** (`3973156`) — `ubuntu-latest` moved to ubuntu-26.04, which has no Ruby 3.3.5, so every deploy failed at Setup Ruby. Build job in `deploy.yml` pinned to `ubuntu-24.04`.
 - **2026-11-05, round 2: page structure** — new AI in Education page (`_pages/ai-in-education.md`); About bio, name pronunciation and contact note (`contact_note` in `_config.yml`) rewritten; 中文 page reduced to the intro plus four articles (Yulai moved to AI in Education); Coffee Map page removed; `sort_by: none`, so Research groups follow `papers.bib` file order; CV Tsuda description line shortened; straight quotes in displayed text replaced with curly ones.
 - **2026-11-05, round 3** — About first paragraph rewritten; CV paper lists now built from papers.bib by _plugins/cv-papers.rb.
+- **2026-11-05, round 4: redesign** — palette in `_sass/_themes.scss` (primary #233B40, accent #B7533B, background #FCFAF7); self-hosted fonts (headings Newsreader + Noto Serif SC, body Inter + Noto Sans SC), replacing Google Fonts; dark navbar, collapsing below 768px; non-fixed light footer; About opening (name, accent rule, subtitle) with the photo beside the bio and contact details under it; CV without cards, with coauthor links and bold paper titles; AI in Education products as cards, Yulai first; scroll progress bar and MathJax turned off. Page styles are in `_sass/_design.scss`. About text: subtitle added, first sentence of the second bio paragraph and the pronunciation line removed, photo alt text set, Graduate School of Economics linked.
 
 ## ⏳ To do
 
@@ -26,7 +27,6 @@ _Last updated: 2026-11-05_
 - **Around 2026-08-01** (~2 weeks after migration): once the new Actions deployment is confirmed stable, the **`gh-pages` branch can be deleted** (currently kept as a rollback safety net).
 - build job 临时固定在 ubuntu-24.04；长期方案是把 Ruby 从 3.3.5 升级到 ubuntu-latest 上可用的版本并完整测一次部署。
   - Together with the Ruby upgrade: `scripts/gen_cv.rb` fails at its last step on a fresh clone, because git does not track the empty `assets/pdf/`. One line of `FileUtils.mkdir_p` fixes it.
-- **Design revamp:** a paper with 4+ authors in total shows "and 1 more author" on Research (`max_author_limit: 3` in `_config.yml`), while the CV lists everyone. No current paper is affected.
 - **For reference:** the CV PDF's Email line prints raw HTML (`<a href=…>`), because `esc` in `scripts/gen_cv.rb` only handles `<em>`. The PDF is currently unused.
 
 ## 🔧 Useful references
@@ -37,6 +37,9 @@ _Last updated: 2026-11-05_
 - **Rule: papers are edited only in `_bibliography/papers.bib`; `_data/cv.yml` no longer holds paper entries.** `_plugins/cv-papers.rb` fills the CV lists at build time.
 - **Publications:** `_bibliography/papers.bib` (grouped Published / Working Papers / Works in Progress; each group displays in file order); coauthor homepage links in `_data/coauthors.yml`.
 - **Do not link to `/publications/#<bib key>`:** `assets/js/bibsearch.js` treats the URL hash as filter text, so a key matches nothing and the page goes blank. Link to `/publications/` instead.
+- **Fonts:** after adding Chinese text, run `python3 scripts/build_fonts.py` and commit `assets/fonts/`. It finds the characters by itself; until it runs, a new character shows in a system font.
 - **Curly quotes:** Markdown converts straight quotes on its own, but `_data/cv.yml` and raw HTML blocks do not, so type `“ ” ’` there directly.
+- **Math:** `enable_math` in `_config.yml` is off, because no page has a formula. Turn it on when a page needs to display one.
+- **Check style changes on a production build plus purgecss, as CI does:** the minifier can break colors that a dev build shows fine (translucent white became invalid CSS), and the local avatar can show as broken without ImageMagick.
 - **Local preview:** `bundle exec ruby "$(bundle show jekyll)/exe/jekyll" serve` (the `jekyll` bin isn't on PATH; invoke via the gem's exe).
 - `website-redesign-brief.md` (gitignored, local only) is the original spec.

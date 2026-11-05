@@ -10,11 +10,8 @@ profile:
   image_alt: Mengying Peng
   image_circular: false # crops the image to make it circular
   more_info: |
-    <strong>Address:</strong><br>
-    2-1 Naka, Kunitachi<br>
-    Tokyo, Japan 186-8601<br><br>
-    <strong>Email:</strong> <a href="mailto:mengying.peng@r.hit-u.ac.jp">mengying.peng@r.hit-u.ac.jp</a><br>
-    <a href="mailto:mengying.peng25@gmail.com">mengying.peng25@gmail.com</a> <br><br>
+    <div class="contact-row"><strong>Email:</strong> <div><a href="mailto:mengying.peng@r.hit-u.ac.jp">mengying.peng@r.hit-u.ac.jp</a><br><a href="mailto:mengying.peng25@gmail.com">mengying.peng25@gmail.com</a></div></div>
+    <div class="contact-row"><strong>Address:</strong> <div>2-1 Naka, Kunitachi<br>Tokyo, Japan 186-8601</div></div>
 
 
 selected_papers: false # includes a list of papers marked as "selected={true}"

@@ -34,12 +34,12 @@
           </div>
         {% else %}
           <div class="row">
-            <!-- sidebar, which will move to the top on a small screen -->
-            <div class="col-sm-3">
+            <!-- sidebar, hidden on small screens -->
+            <div class="col-md-3">
               <nav id="toc-sidebar" class="sticky-top"></nav>
             </div>
             <!-- main content area -->
-            <div class="col-sm-9">{{ content }}</div>
+            <div class="col-md-9">{{ content }}</div>
           </div>
         {% endif %}
       {% else %}

@@ -1,0 +1,58 @@
+/*******************************************************************************
+ * Self-hosted fonts (SIL Open Font License; the license text is in each file).
+ * Each file is a subset: the CJK faces hold only the characters the site uses.
+ * After adding Chinese text, regenerate them with: python3 scripts/build_fonts.py
+ * Until then a new character falls back to the system font.
+ ******************************************************************************/
+
+$cjk-range: U+2E80-9FFF, U+F900-FAFF, U+FE30-FE4F, U+FF00-FFEF;
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-var.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans SC";
+  src: url("../fonts/noto-sans-sc-var.woff2") format("woff2");
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $cjk-range;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("../fonts/newsreader-var.woff2") format("woff2");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Serif SC";
+  src: url("../fonts/noto-serif-sc-var.woff2") format("woff2");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: $cjk-range;
+}
+
+:root {
+  --font-sans: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Segoe UI", sans-serif;
+  --font-heading: "Newsreader", "Noto Serif SC", "Songti SC", "STSong", SimSun, Georgia, serif;
+  --font-heading-weight: 500;
+  --font-heading-spacing: -0.005em;
+}

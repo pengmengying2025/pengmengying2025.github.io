@@ -10,10 +10,21 @@ module CvPapers
 
   module_function
 
-  def coauthors(entry)
+  # `links` is _data/coauthors.yml on the web CV, where names link as on the
+  # Research page. It is nil for the PDF, which takes plain text.
+  def person(name, links)
+    label = "#{name.first} #{name.last}"
+    return label unless links
+
+    candidates = Array(links[I18n.transliterate(name.last.to_s.downcase)])
+    match = candidates.find { |c| Array(c['firstname']).include?(name.first.to_s) }
+    match ? %(<a href="#{match['url']}">#{label}</a>) : label
+  end
+
+  def coauthors(entry, links)
     names = entry.author.to_a
                  .reject { |n| n.first.to_s == OWNER[:first] && n.last.to_s == OWNER[:last] }
-                 .map { |n| "#{n.first} #{n.last}" }
+                 .map { |n| person(n, links) }
     return names.join(' and ') if names.size <= 2
 
     "#{names[0..-2].join(', ')}, and #{names[-1]}"
@@ -21,9 +32,11 @@ module CvPapers
 
   # Published: "Title, with A, <em>Journal</em>, 2025."
   # Otherwise: "Title — with A and B" plus ". <em>Under review</em>" if there is a note.
-  def line(entry)
+  # On the web CV the title is bold and the note carries a class for its color.
+  def line(entry, links)
     title = entry[:title].to_s
-    with = coauthors(entry)
+    title = "<strong>#{title}</strong>" if links
+    with = coauthors(entry, links)
     if entry.field?(:journal)
       parts = [title]
       parts << "with #{with}" unless with.empty?
@@ -31,7 +44,9 @@ module CvPapers
       "#{parts.join(', ')}."
     else
       text = with.empty? ? title : "#{title} — with #{with}"
-      entry.field?(:note) ? "#{text}. <em>#{entry[:note]}</em>" : text
+      return text unless entry.field?(:note)
+
+      links ? %(#{text}. <em class="paper-note">#{entry[:note]}</em>) : "#{text}. <em>#{entry[:note]}</em>"
     end
   end
 
@@ -45,7 +60,7 @@ module CvPapers
   end
 
   # The latex filter matches jekyll-scholar's, so both pages read the same text.
-  def fill!(sections, bib_path)
+  def fill!(sections, bib_path, links: nil)
     entries = BibTeX.open(bib_path, filter: :latex).select { |e| e.is_a?(BibTeX::Entry) }
     validate!(entries, bib_path)
     sections.each do |section|
@@ -55,7 +70,7 @@ module CvPapers
       matching = entries.select { |e| e[:category].to_s == category }
       raise "cv-papers: no entries in #{bib_path} with category=#{category}" if matching.empty?
 
-      section['contents'] = matching.map { |e| line(e) }
+      section['contents'] = matching.map { |e| line(e, links) }
     end
   end
 end
@@ -66,7 +81,7 @@ if defined?(Jekyll)
 
     def generate(site)
       sections = site.data['cv']
-      CvPapers.fill!(sections, site.in_source_dir('_bibliography', 'papers.bib'))
+      CvPapers.fill!(sections, site.in_source_dir('_bibliography', 'papers.bib'), links: site.data['coauthors'] || {})
       filled = sections.select { |s| s['bib_category'] }
                        .map { |s| "#{s['title']}=#{s['contents'].size}" }
       Jekyll.logger.info 'CV papers:', filled.join(', ')
