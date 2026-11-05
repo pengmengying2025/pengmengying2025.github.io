@@ -44,28 +44,15 @@
 
 - title: Publications
   type: list
-  contents:
-    - 'Peer Effects on College Choice: Evidence from Affirmative Action in China, with Xiaoyang Ye, <em>Labour Economics</em>, 2025.'
+  bib_category: published
 
 - title: Working Papers
   type: list
-  contents:
-    - 'Cognitive Skills and Economic Growth: Evidence from the Adult Workforce — with John M. Fredericks and Margarita Pivovarova. <em>Under review</em>'
-    - 'Choosing Subjects before Majors: Information and College Major Eligibility — with Xin Li and Xiaoyang Ye'
-    - 'When Ramadan Meets the College Entrance Exam: The Effects on Student Outcomes in China — with Xiaoyang Ye'
-    - 'Unintended Consequences of Affirmative Action in Higher Education: Evidence from India — with Takashi Kurosaki'
-    - 'International Agricultural Price Shocks and Child Labor: The Role of Crop Choice in Rural China — with Jingcheng Jiang'
-    - 'Unequal Access to Same-Race Teachers: Evidence from Arizona Public Schools — with Margarita Pivovarova and Jeanne M. Powers'
+  bib_category: working
 
 - title: Works in Progress
   type: list
-  contents:
-    - 'Where Does the Bonus Count? Affirmative Action and Major Placement in China'
-    - 'Thinking Partner or Lookup Tool? How Students Use a Generative AI Assistant in China’s High-Stakes College Applications — with Xiaoyang Ye'
-    - 'Identifying Hidden Mathematical Talent: Experimental Evidence from Rural China — with Stephen L. DesJardins and Xiaoyang Ye'
-    - 'Who Is Taught by a First-Year Teacher? Novice Exposure Before and After the Pandemic — with Margarita Pivovarova'
-    - 'Decentralized Health Insurance Policy and Healthcare Access: Evidence from Indian States — with Tanika Chakraborty and Yuko Mori'
-    - 'Gender, Career Horizons, and Political Selection in the Chinese Party-State'
+  bib_category: wip
 
 - title: Grants, Fellowships, and Awards
   type: time_table

@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-# Regenerate the CV PDF from _data/cv.yml (single source of truth).
+# Regenerate the CV PDF from _data/cv.yml, plus _bibliography/papers.bib for the
+# paper lists (sections with `bib_category`).
 #
 # Usage (from the repo root; requires a TeX distro with `xelatex` on PATH):
 #     ruby scripts/gen_cv.rb
@@ -13,9 +14,11 @@
 require 'yaml'
 require 'tmpdir'
 require 'fileutils'
+require_relative '../_plugins/cv-papers'
 
 ROOT = File.expand_path('..', __dir__)
 CV = YAML.load_file(File.join(ROOT, '_data', 'cv.yml'))
+CvPapers.fill!(CV, File.join(ROOT, '_bibliography', 'papers.bib'))
 
 def esc(s)
   s = s.to_s

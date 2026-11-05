@@ -18,19 +18,23 @@ _Last updated: 2026-11-05_
 - **2026-11-05, round 1: Research and CV content** (`8e60f94`) — three papers retitled; "Cognitive Skills and Economic Growth" moved to first in Working Papers with "Under review" (bib `note` field); four new WIP entries (six in total); CV paper lists synced, heading now "Works in Progress"; Tsuda appointment, 2027 presentation group and 2026 grants updated.
 - **2026-11-05, deploy fix** (`3973156`) — `ubuntu-latest` moved to ubuntu-26.04, which has no Ruby 3.3.5, so every deploy failed at Setup Ruby. Build job in `deploy.yml` pinned to `ubuntu-24.04`.
 - **2026-11-05, round 2: page structure** — new AI in Education page (`_pages/ai-in-education.md`); About bio, name pronunciation and contact note (`contact_note` in `_config.yml`) rewritten; 中文 page reduced to the intro plus four articles (Yulai moved to AI in Education); Coffee Map page removed; `sort_by: none`, so Research groups follow `papers.bib` file order; CV Tsuda description line shortened; straight quotes in displayed text replaced with curly ones.
+- **2026-11-05, round 3** — About first paragraph rewritten; CV paper lists now built from papers.bib by _plugins/cv-papers.rb.
 
 ## ⏳ To do
 
 - **Photographs page** (navbar position TBD) — *waiting on photos from MM.* Decisions to make first: group the photos or not? add captions/text or not?
 - **Around 2026-08-01** (~2 weeks after migration): once the new Actions deployment is confirmed stable, the **`gh-pages` branch can be deleted** (currently kept as a rollback safety net).
 - build job 临时固定在 ubuntu-24.04；长期方案是把 Ruby 从 3.3.5 升级到 ubuntu-latest 上可用的版本并完整测一次部署。
-- **Undecided:** have the CV paper lists read from `papers.bib`. Assessed in round 1, not implemented: a build-time plugin fills the lists; `scripts/gen_cv.rb` must change with it or it crashes. In a scratch copy the plugin reproduced the CV page byte for byte.
+  - Together with the Ruby upgrade: `scripts/gen_cv.rb` fails at its last step on a fresh clone, because git does not track the empty `assets/pdf/`. One line of `FileUtils.mkdir_p` fixes it.
+- **Design revamp:** a paper with 4+ authors in total shows "and 1 more author" on Research (`max_author_limit: 3` in `_config.yml`), while the CV lists everyone. No current paper is affected.
+- **For reference:** the CV PDF's Email line prints raw HTML (`<a href=…>`), because `esc` in `scripts/gen_cv.rb` only handles `<em>`. The PDF is currently unused.
 
 ## 🔧 Useful references
 
 - **Deploy:** any push to `main` → `.github/workflows/deploy.yml` builds and publishes via Actions Pages. A successful push is not yet live: check that the Deploy site run finished. The Prettier workflow has failed on every push since at least July; it does not block deploys.
 - **Rollback** (only if Actions deploy ever breaks): Settings → Pages → Source → "Deploy from a branch" → `gh-pages` → Save, then `git revert` the deploy.yml migration commit. The `gh-pages` branch still holds the last site.
-- **CV content:** `_data/cv.yml`. Its paper lists are a separate copy, kept in sync with `papers.bib` by hand. Regenerate the (currently unused, download button removed) CV PDF with `ruby scripts/gen_cv.rb`.
+- **CV content:** `_data/cv.yml`. Regenerate the (currently unused, download button removed) CV PDF with `ruby scripts/gen_cv.rb`.
+- **Rule: papers are edited only in `_bibliography/papers.bib`; `_data/cv.yml` no longer holds paper entries.** `_plugins/cv-papers.rb` fills the CV lists at build time.
 - **Publications:** `_bibliography/papers.bib` (grouped Published / Working Papers / Works in Progress; each group displays in file order); coauthor homepage links in `_data/coauthors.yml`.
 - **Do not link to `/publications/#<bib key>`:** `assets/js/bibsearch.js` treats the URL hash as filter text, so a key matches nothing and the page goes blank. Link to `/publications/` instead.
 - **Curly quotes:** Markdown converts straight quotes on its own, but `_data/cv.yml` and raw HTML blocks do not, so type `“ ” ’` there directly.
