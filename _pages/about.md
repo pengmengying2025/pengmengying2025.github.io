@@ -22,6 +22,8 @@ social: true # includes social icons at the bottom of the page
 
 I am a Specially Appointed Assistant Professor at the [Hitotsubashi Institute for Advanced Study](https://hias.hit-u.ac.jp/) (HIAS), Hitotsubashi University, in Tokyo, Japan, where I also received my Ph.D. in Economics. I am additionally a part-time lecturer at Tsuda University.
 
-My research is in applied microeconomics, with a focus on development economics and the economics of education. I study human capital formation, the evaluation of education policies, and inequalities in educational access and outcomes across gender, ethnicity, race, and socioeconomic background — primarily in China, with related work on India and the United States.
+I am an applied microeconomist working at the intersection of the economics of education and development economics. My research examines how policies, institutions, information, and technology shape educational decisions, opportunities, and human capital development, particularly among disadvantaged populations. Using field experiments, administrative records, and survey data from China, the United States, and India, I study college choice and affirmative action, information frictions, talent identification, teacher labor markets, and educational inequality. I also work on healthcare access and gender disparities in politics.
 
-You can pronounce my name as **"Muhng-ying Puhng" (メンイン・ペン).**
+Alongside my empirical research, I develop [AI-based tools]({{ '/ai-in-education/' | relative_url }}) to support educational decision-making and learning, including a college-application advising platform and an AI math tutoring platform for primary-school students.
+
+You can pronounce my name as **“Mung-ying Pung” (メンイン・ペン).**

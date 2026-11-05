@@ -7,7 +7,7 @@ first_name: Mengying
 #middle_name: R.
 last_name: Peng
 contact_note: >
-  Feel free to reach out via email — it's the best way to contact me.
+  Feel free to reach out or connect.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Academic website of Mengying Peng (彭梦莹), Specially Appointed Assistant Professor at the Hitotsubashi Institute for Advanced Study (HIAS), Hitotsubashi University, Tokyo. Research in applied microeconomics, development economics, and the economics of education.
 footer_text:
@@ -204,7 +204,7 @@ scholar:
   details_link: Details
 
   query: "@*"
-  sort_by: year
+  sort_by: none
   order: descending
 
 # Display different badges withs stats for your publications
