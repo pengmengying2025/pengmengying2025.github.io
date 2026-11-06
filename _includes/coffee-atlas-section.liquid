@@ -1,0 +1,22 @@
+{% comment %}
+  The two maps are made by scripts/build_coffee_map.py from the Google My Maps export; after changing
+  the map, export a new KMZ and run the script again. Both SVGs are inlined, so they make no requests,
+  and hidden from screen readers: the intro, the legend and the full-map link say what they show.
+{% endcomment %}
+<section class="elsewhere-section coffee-atlas" id="coffee-atlas">
+  <h2>Coffee Atlas</h2>
+  <p class="section-intro">Cafés I’ve loved&nbsp;❤️ and ones that do the job for a daily coffee&nbsp;⭐.</p>
+
+  <div class="coffee-atlas-maps">
+    <div class="coffee-atlas-map coffee-atlas-japan">{% include coffee-atlas-japan.svg %}</div>
+    <div class="coffee-atlas-map coffee-atlas-usa">{% include coffee-atlas-usa.svg %}</div>
+  </div>
+
+  <div class="coffee-atlas-footer">
+    <ul class="coffee-atlas-legend">
+      <li><span class="coffee-atlas-key coffee-atlas-key-loved" aria-hidden="true"></span>Loved&nbsp;❤️</li>
+      <li><span class="coffee-atlas-key coffee-atlas-key-daily" aria-hidden="true"></span>Daily coffee&nbsp;⭐</li>
+    </ul>
+    <a class="action-link external-link" href="https://www.google.com/maps/d/viewer?mid=1H58JGmucJ3DXcAVr82gdeM_ekxaunUE">Open the full map&nbsp;↗</a>
+  </div>
+</section>
