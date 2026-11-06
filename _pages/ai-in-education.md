@@ -3,7 +3,7 @@ layout: page
 permalink: /ai-in-education/
 title: AI in Education
 nav: true
-nav_order: 2
+nav_order: 3
 ---
 
 These platforms extend my research on educational decision-making and talent development into tools that students and families can use.
