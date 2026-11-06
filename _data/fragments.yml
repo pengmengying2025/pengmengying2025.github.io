@@ -2,7 +2,7 @@
 # Photos appear in this order. The first runs full width; the numbers and the two columns follow from the order.
 # A photo with no place shows none. After adding a photo or changing a source, run: python3 scripts/build_photos.py
 
-intro: Photographs from places I have lived in or passed through.
+intro: "A few little moments from walks, hikes, and travels.\u00A0📸"
 
 photos:
   - id: grand-canyon
@@ -11,17 +11,17 @@ photos:
     place: Arizona
     alt: The Colorado River winding between the layered red walls of the Grand Canyon at dusk.
 
-  - id: lake-michigan
-    source: Michigan lake.jpg
-    title: Lake Michigan
-    place: Chicago
-    alt: Eight geese swimming in a line across the calm, pale blue water of Lake Michigan in Chicago.
-
   - id: aomori-autumn
     source: autumn in Aomori.jpeg
     title: Autumn
     place: Aomori
     alt: A hillside of red and orange autumn trees in Aomori, reflected in a still lake.
+
+  - id: lake-michigan
+    source: Michigan lake.jpg
+    title: Winter
+    place: Chicago
+    alt: Eight geese swimming in a line across the calm, pale blue water of Lake Michigan in Chicago.
 
   - id: hokkaido-lighthouse
     source: lighthouse in Hokkaido.jpeg
@@ -48,16 +48,16 @@ photos:
     alt: The rust-red crater at the summit of Mt. Fuji, strewn with rocks, under a blue sky with thin clouds.
 
   - id: parking-only
-    source: parking only.jpg
-    title: Parking only
+    source: parking only2.JPG
+    title: "Parking only :)"
     place: San Francisco
-    alt: A seagull standing on top of a blue accessible-parking sign in San Francisco, against a bright sky.
+    alt: A seagull standing on top of a blue accessible-parking sign in San Francisco, under a wide blue sky with the sea on the horizon.
 
-  - id: tokyo-corner
-    source: corner in Tokyo.jpeg
-    title: Corner
-    place: Tokyo
-    alt: A blue vending machine between blue trash bins in front of a closed metal shutter in Tokyo, with red flowers at the left.
+  - id: tokyo-station
+    source: Tokyo station.jpg
+    title: Tokyo Station
+    place:
+    alt: The red-brick Marunouchi building of Tokyo Station, with white stone bands, pine trees and two flagpoles in front, and glass towers behind.
 
   - id: baby-girl
     source: baby girl grows up.jpg

@@ -34,9 +34,9 @@
   <div class="fragments-columns">
     {% comment %}
       Each photo goes to the shorter column, so the columns stay level with no script and the
-      numbers stay in reading order. The left column is wider: _design.scss splits the space beside
-      the gap 61:39. Heights here are in the two columns' combined width (868px on a wide screen):
-      the photo's own proportion times its column's share, plus its caption and gap (58px, 0.067).
+      numbers stay in reading order. _design.scss splits the space beside the gap 46:54. Heights
+      here are in the two columns' combined width (868px on a wide screen): the photo's own
+      proportion times its column's share, plus its caption and gap (58px, 0.067).
       The right column starts lower (7rem, 112px, 0.129). Change the shares and the head start in
       both files together.
     {% endcomment %}
@@ -48,12 +48,12 @@
       {% assign number = forloop.index | plus: 1 %}
       {% if left <= right %}
         {% assign side = 'fragment-left' %}
-        {% assign left = shape | times: 0.61 | plus: 0.067 | plus: left %}
-        {% assign sizes = '(min-width: 960px) 529px, (min-width: 768px) calc(61vw - 38px), calc(100vw - 30px)' %}
+        {% assign left = shape | times: 0.46 | plus: 0.067 | plus: left %}
+        {% assign sizes = '(min-width: 960px) 399px, (min-width: 768px) calc(46vw - 29px), calc(100vw - 30px)' %}
       {% else %}
         {% assign side = 'fragment-right' %}
-        {% assign right = shape | times: 0.39 | plus: 0.067 | plus: right %}
-        {% assign sizes = '(min-width: 960px) 339px, (min-width: 768px) calc(39vw - 24px), calc(100vw - 30px)' %}
+        {% assign right = shape | times: 0.54 | plus: 0.067 | plus: right %}
+        {% assign sizes = '(min-width: 960px) 469px, (min-width: 768px) calc(54vw - 33px), calc(100vw - 30px)' %}
       {% endif %}
       {% include fragment.liquid photo=photo number=number loading="lazy" class=side sizes=sizes %}
     {% endfor %}

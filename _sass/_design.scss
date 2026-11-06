@@ -740,18 +740,18 @@ a.product-name:hover strong {
     display: flow-root;
   }
 
-  // The left column is wider: the space beside the 2rem gap splits 61:39.
+  // The space beside the 2rem gap splits 46:54.
   // fragments-section.liquid places the photos with the same shares: change both together.
   .fragment-left {
     clear: left;
     float: left;
-    width: calc((100% - 2rem) * 0.61);
+    width: calc((100% - 2rem) * 0.46);
   }
 
   .fragment-right {
     clear: right;
     float: right;
-    width: calc((100% - 2rem) * 0.39);
+    width: calc((100% - 2rem) * 0.54);
   }
 
   // The right column starts lower, so photos of the same shape never line up in a row.
