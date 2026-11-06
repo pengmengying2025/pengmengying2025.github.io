@@ -1,0 +1,59 @@
+{% comment %}
+  These style the zoomed photo. medium-zoom adds its classes at runtime from a CDN script, so purgecss
+  cannot see them in the site's files; an inline style is out of its reach.
+  The z-index puts the photo above the fixed navbar, and the solid background hides what is behind it.
+  Reduced motion keeps a tiny duration: medium-zoom waits for transitionend, which never fires at zero.
+{% endcomment %}
+<style>
+  .medium-zoom-overlay,
+  .medium-zoom-image--opened {
+    z-index: 1040;
+  }
+
+  .medium-zoom-overlay {
+    background: var(--global-bg-color) !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    img.medium-zoom-image {
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+
+{% assign fragments = site.data.fragments %}
+<section class="elsewhere-section fragments" id="fragments">
+  <h2>Fragments</h2>
+  <p class="section-intro">{{ fragments.intro }}</p>
+
+  {%
+    include fragment.liquid photo=fragments.photos.first number=1 loading="eager" class="fragment-hero"
+    sizes="(min-width: 960px) 900px, calc(100vw - 30px)"
+  %}
+
+  <div class="fragments-columns">
+    {% comment %}
+      Each photo goes to the shorter column, so the columns stay level with no script and the
+      numbers stay in reading order. Heights are in column widths: the photo's own proportion
+      plus its caption and gap. The right column starts lower, as set in _design.scss (7rem).
+    {% endcomment %}
+    {% assign left = 0.0 %}
+    {% assign right = 0.26 %}
+    {% for photo in fragments.photos offset: 1 %}
+      {% assign image = site.data.fragment_images[photo.id].large %}
+      {% assign height = image.height | times: 1.0 | divided_by: image.width | plus: 0.14 %}
+      {% assign number = forloop.index | plus: 1 %}
+      {% if left <= right %}
+        {% assign side = 'fragment-left' %}
+        {% assign left = left | plus: height %}
+      {% else %}
+        {% assign side = 'fragment-right' %}
+        {% assign right = right | plus: height %}
+      {% endif %}
+      {%
+        include fragment.liquid photo=photo number=number loading="lazy" class=side
+        sizes="(min-width: 960px) 434px, (min-width: 768px) calc(50vw - 31px), calc(100vw - 30px)"
+      %}
+    {% endfor %}
+  </div>
+</section>

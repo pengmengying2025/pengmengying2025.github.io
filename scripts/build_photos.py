@@ -1,0 +1,133 @@
+#!/usr/bin/env python3
+"""Regenerate the web versions of the Elsewhere photos.
+
+Run this after changing the photo list in _data/fragments.yml, then commit
+assets/img/fragments/ and _data/fragment_images.yml:
+
+    python3 scripts/build_photos.py
+
+Originals stay outside the repo and are only read. Each photo gets two WebP files,
+longest side 1600px and 800px (never enlarged), in sRGB and holding nothing but
+pixels: no EXIF, GPS, XMP or color profile. The script stops if any output holds
+anything else. The first run creates a private virtual environment.
+"""
+
+import argparse
+import io
+import os
+import struct
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+PHOTO_LIST = ROOT / "_data" / "fragments.yml"
+IMAGE_SIZES = ROOT / "_data" / "fragment_images.yml"
+OUT = ROOT / "assets" / "img" / "fragments"
+SOURCE = Path.home() / "Dropbox" / "个人主页用" / "photo"
+CACHE = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache")) / "academic-homepage-photos"
+VENV = CACHE / "venv"
+REQUIREMENTS = ["pillow==11.3.0", "pyyaml==6.0.2"]  # the newest Pillow that still runs on the macOS system Python
+
+LONGEST_SIDE = {"large": 1600, "small": 800}
+QUALITY = 90  # lower than this, smooth skies start to show blocks
+
+
+def run_in_private_venv():
+    """Re-launch this script inside the cached virtual environment."""
+    if Path(sys.prefix).resolve() == VENV.resolve():
+        return
+    python = VENV / "bin" / "python"
+    if not python.exists():
+        print("Creating the photo tools environment (first run only)...")
+        CACHE.mkdir(parents=True, exist_ok=True)
+        subprocess.check_call([sys.executable, "-m", "venv", str(VENV)])
+    subprocess.check_call(
+        [str(python), "-m", "pip", "install", "--quiet", "--disable-pip-version-check", *REQUIREMENTS]
+    )
+    os.execv(str(python), [str(python), str(Path(__file__).resolve()), *sys.argv[1:]])
+
+
+def upright_srgb(path):
+    """Open a photo the way it is meant to be seen, with colors converted to sRGB."""
+    from PIL import Image, ImageCms, ImageOps
+
+    with Image.open(path) as opened:
+        image = ImageOps.exif_transpose(opened).convert("RGB")
+        profile = opened.info.get("icc_profile")
+    if profile:
+        # Dropping a wide-gamut profile without converting would wash the colors out.
+        image = ImageCms.profileToProfile(
+            image, ImageCms.ImageCmsProfile(io.BytesIO(profile)), ImageCms.createProfile("sRGB"), outputMode="RGB"
+        )
+    # A fresh image carries the pixels and nothing else from the original file.
+    clean = Image.new("RGB", image.size)
+    clean.paste(image)
+    return clean
+
+
+def scaled(image, longest_side):
+    """Return the image with its longest side at most longest_side."""
+    from PIL import Image
+
+    scale = longest_side / max(image.size)
+    if scale >= 1:
+        return image
+    return image.resize((round(image.width * scale), round(image.height * scale)), Image.LANCZOS)
+
+
+def webp_chunks(path):
+    """Return the names of the chunks in a WebP file."""
+    data = path.read_bytes()
+    if data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+        sys.exit(f"{path.name} is not a WebP file")
+    names, position = [], 12
+    while position + 8 <= len(data):
+        size = struct.unpack("<I", data[position + 4 : position + 8])[0]
+        names.append(data[position : position + 4].decode("latin-1"))
+        position += 8 + size + (size & 1)
+    return names
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Regenerate the web versions of the Elsewhere photos.")
+    parser.add_argument("--source", type=Path, default=SOURCE, help="folder with the original photos")
+    args = parser.parse_args()
+
+    run_in_private_venv()
+    import yaml
+
+    photos = yaml.safe_load(PHOTO_LIST.read_text(encoding="utf-8"))["photos"]
+    missing = [photo["source"] for photo in photos if not (args.source / photo["source"]).is_file()]
+    if missing:
+        sys.exit(f"Not found in {args.source}: {', '.join(missing)}")
+
+    OUT.mkdir(parents=True, exist_ok=True)
+    sizes, total = {}, 0
+    for photo in photos:
+        image = upright_srgb(args.source / photo["source"])
+        sizes[photo["id"]] = {}
+        report = []
+        for tier, longest_side in LONGEST_SIDE.items():
+            version = scaled(image, longest_side)
+            path = OUT / f"{photo['id']}-{tier}.webp"
+            version.save(path, "WEBP", quality=QUALITY, method=6)
+            if webp_chunks(path) != ["VP8 "]:
+                sys.exit(f"{path.name} holds more than image data: {webp_chunks(path)}")
+            sizes[photo["id"]][tier] = {"width": version.width, "height": version.height}
+            total += path.stat().st_size
+            report.append(f"{version.width}x{version.height} {path.stat().st_size / 1024:.0f} KB")
+        print(f"{photo['id']:22} {' | '.join(report)}")
+
+    header = "# Generated by scripts/build_photos.py. Do not edit by hand.\n"
+    IMAGE_SIZES.write_text(header + yaml.safe_dump(sizes, sort_keys=False), encoding="utf-8")
+
+    expected = {f"{photo['id']}-{tier}.webp" for photo in photos for tier in LONGEST_SIDE}
+    stale = sorted(path.name for path in OUT.iterdir() if path.name not in expected)
+    if stale:
+        print(f"No longer on the list, delete if unwanted: {', '.join(stale)}")
+    print(f"{len(photos)} photos, {total / 1024 / 1024:.1f} MB in {OUT.relative_to(ROOT)}")
+
+
+if __name__ == "__main__":
+    main()

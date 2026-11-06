@@ -1,0 +1,66 @@
+# The Fragments section of the Elsewhere page.
+# Photos appear in this order. The first runs full width; the numbers and the two columns follow from the order.
+# A photo with no place shows none. After adding a photo or changing a source, run: python3 scripts/build_photos.py
+
+intro: Photographs from places I have lived in or passed through.
+
+photos:
+  - id: grand-canyon
+    source: grand canyon.jpg
+    title: Grand Canyon
+    place: Arizona
+    alt: The Colorado River winding between the layered red walls of the Grand Canyon at dusk.
+
+  - id: lake-michigan
+    source: Michigan lake.jpg
+    title: Lake Michigan
+    place: USA
+    alt: Eight geese swimming in a line across the calm, pale blue water of Lake Michigan.
+
+  - id: aomori-autumn
+    source: autumn in Aomori.jpeg
+    title: Autumn
+    place: Aomori
+    alt: A hillside of red and orange autumn trees in Aomori, reflected in a still lake.
+
+  - id: hokkaido-lighthouse
+    source: lighthouse in Hokkaido.jpeg
+    title: Lighthouse
+    place: Abashiri
+    alt: A black-and-white striped lighthouse in Abashiri, its lamp lit under a dark blue evening sky.
+
+  - id: hello
+    source: Hello.jpeg
+    title: Hello
+    place: Gotoku-ji Temple
+    alt: Rows of white beckoning-cat figurines at Gotoku-ji Temple, with red ears and collars, each raising one paw.
+
+  - id: fuji-summit
+    source: Fuji top.jpg
+    title: 12 hours of hiking for a giant hole 🗻
+    place: Mt. Fuji
+    alt: The rust-red crater at the summit of Mt. Fuji, strewn with rocks, under a blue sky with thin clouds.
+
+  - id: parking-only
+    source: parking only.jpg
+    title: Parking only
+    place:
+    alt: A seagull standing on top of a blue accessible-parking sign against a bright sky.
+
+  - id: tokyo-corner
+    source: corner in Tokyo.jpeg
+    title: Corner
+    place: Tokyo
+    alt: A blue vending machine between blue trash bins in front of a closed metal shutter in Tokyo, with red flowers at the left.
+
+  - id: peace
+    source: peace.jpeg
+    title: Peace
+    place: Lee Ufan Museum
+    alt: A tall concrete arch on a grassy field by the sea at the Lee Ufan Museum, with one small figure in the distance.
+
+  - id: baby-girl
+    source: baby girl grows up.jpg
+    title: Baby girl grows up ❤️
+    place:
+    alt: A small tan dog in a white fleece costume, standing on a gray wood floor and looking down.

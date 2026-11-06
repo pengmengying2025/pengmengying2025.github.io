@@ -1,0 +1,34 @@
+{% assign image = site.data.fragment_images[include.photo.id] %}
+{% assign base = '/assets/img/fragments/' | append: include.photo.id | relative_url %}
+{% assign number = include.number | prepend: '0' | slice: -2, 2 %}
+{% comment %}
+  The size choice sits on <source>, not on <img>: medium-zoom clones the <img>, and a clone
+  carrying srcset reports the wrong natural size, so the zoomed photo would open too small.
+{% endcomment %}
+<figure class="fragment {{ include.class }}">
+  <picture>
+    <source
+      srcset="{{ base }}-small.webp {{ image.small.width }}w, {{ base }}-large.webp {{ image.large.width }}w"
+      sizes="{{ include.sizes }}"
+    >
+    <img
+      src="{{ base }}-small.webp"
+      width="{{ image.large.width }}"
+      height="{{ image.large.height }}"
+      alt="{{ include.photo.alt }}"
+      loading="{{ include.loading }}"
+      decoding="async"
+      {% if include.loading == 'eager' %}
+        fetchpriority="high"
+      {% endif %}
+      data-zoomable
+      data-zoom-src="{{ base }}-large.webp"
+    >
+  </picture>
+  <figcaption>
+    <span class="fragment-title">{{ number }} / {{ include.photo.title }}</span>
+    {% if include.photo.place %}
+      <span class="fragment-place">{{ include.photo.place }}</span>
+    {% endif %}
+  </figcaption>
+</figure>
