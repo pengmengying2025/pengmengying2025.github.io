@@ -10,7 +10,7 @@ _Last updated: 2026-11-06_
 ## ✅ Done
 
 - **Six pages live** — About · Research · AI in Education · CV · 中文 (Chinese) · Elsewhere.
-  Navbar order: **About · Research · AI in Education · CV · 中文 / Chinese · Elsewhere**.
+  Navbar order: **About · Research · CV · AI in Education · 中文 / Chinese · Elsewhere**.
 - **Removed all al-folio template leftovers** — demo posts/projects/books/pages/images, the blog & news features, and dark mode (site is now light-only).
 - **Real headshot avatar** (`assets/img/mengyingprofile.png`) + **transparent favicon** (`assets/img/laifu_icon_t.png`).
 - **Bug fix:** *Mobile dark mode hid CV institution names* — the theme-detecting JS added Bootstrap `table-dark` (white text) to every table on dark-preference devices. Fixed in `assets/js/no_defer.js` (stop adding `table-dark`) + safety net in `_sass/_cv.scss`.
