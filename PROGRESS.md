@@ -29,6 +29,7 @@ _Last updated: 2026-11-06_
   - Together with the Ruby upgrade: `scripts/gen_cv.rb` fails at its last step on a fresh clone, because git does not track the empty `assets/pdf/`. One line of `FileUtils.mkdir_p` fixes it.
   - `Check for broken links on site` 因为 ubuntu-26.04 上没有 Ruby 3.2.2 一直失败，线上链接检查实际上没在跑，升级 Ruby 时一起修。axe 只能手动触发，从没跑过，无障碍检查也没在跑；它的 Ruby 设置相同，升级时一起改，要自动跑还得另外打开触发条件。
   - 修好之前，不要以为死链有人在查。
+- Coffee Atlas：作为 Elsewhere 页的第二个小节加入；用一张地图截图作预览，下面放打开完整地图的链接（不嵌入 iframe）；发布前由 MM 检查地图上有没有住处或办公室附近的店。
 - **For reference:** the CV PDF's Email line prints raw HTML (`<a href=…>`), because `esc` in `scripts/gen_cv.rb` only handles `<em>`. The PDF is currently unused.
 
 ## 🔧 Useful references
