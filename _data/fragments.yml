@@ -14,8 +14,8 @@ photos:
   - id: lake-michigan
     source: Michigan lake.jpg
     title: Lake Michigan
-    place: USA
-    alt: Eight geese swimming in a line across the calm, pale blue water of Lake Michigan.
+    place: Chicago
+    alt: Eight geese swimming in a line across the calm, pale blue water of Lake Michigan in Chicago.
 
   - id: aomori-autumn
     source: autumn in Aomori.jpeg
@@ -29,6 +29,12 @@ photos:
     place: Abashiri
     alt: A black-and-white striped lighthouse in Abashiri, its lamp lit under a dark blue evening sky.
 
+  - id: peace
+    source: peace.jpeg
+    title: Peace
+    place: Lee Ufan Museum
+    alt: A tall concrete arch on a grassy field by the sea at the Lee Ufan Museum, with one small figure in the distance.
+
   - id: hello
     source: Hello.jpeg
     title: Hello
@@ -37,15 +43,15 @@ photos:
 
   - id: fuji-summit
     source: Fuji top.jpg
-    title: 12 hours of hiking for a giant hole 🗻
-    place: Mt. Fuji
+    title: "12 hours of hiking for a giant hole\u00A0😴"
+    place: Mt. Fuji summit
     alt: The rust-red crater at the summit of Mt. Fuji, strewn with rocks, under a blue sky with thin clouds.
 
   - id: parking-only
     source: parking only.jpg
     title: Parking only
-    place:
-    alt: A seagull standing on top of a blue accessible-parking sign against a bright sky.
+    place: San Francisco
+    alt: A seagull standing on top of a blue accessible-parking sign in San Francisco, against a bright sky.
 
   - id: tokyo-corner
     source: corner in Tokyo.jpeg
@@ -53,14 +59,8 @@ photos:
     place: Tokyo
     alt: A blue vending machine between blue trash bins in front of a closed metal shutter in Tokyo, with red flowers at the left.
 
-  - id: peace
-    source: peace.jpeg
-    title: Peace
-    place: Lee Ufan Museum
-    alt: A tall concrete arch on a grassy field by the sea at the Lee Ufan Museum, with one small figure in the distance.
-
   - id: baby-girl
     source: baby girl grows up.jpg
-    title: Baby girl grows up ❤️
+    title: "My baby girl grows up\u00A0❤️"
     place:
     alt: A small tan dog in a white fleece costume, standing on a gray wood floor and looking down.

@@ -34,26 +34,28 @@
   <div class="fragments-columns">
     {% comment %}
       Each photo goes to the shorter column, so the columns stay level with no script and the
-      numbers stay in reading order. Heights are in column widths: the photo's own proportion
-      plus its caption and gap. The right column starts lower, as set in _design.scss (7rem).
+      numbers stay in reading order. The left column is wider: _design.scss splits the space beside
+      the gap 61:39. Heights here are in the two columns' combined width (868px on a wide screen):
+      the photo's own proportion times its column's share, plus its caption and gap (58px, 0.067).
+      The right column starts lower (7rem, 112px, 0.129). Change the shares and the head start in
+      both files together.
     {% endcomment %}
     {% assign left = 0.0 %}
-    {% assign right = 0.26 %}
+    {% assign right = 0.129 %}
     {% for photo in fragments.photos offset: 1 %}
       {% assign image = site.data.fragment_images[photo.id].large %}
-      {% assign height = image.height | times: 1.0 | divided_by: image.width | plus: 0.14 %}
+      {% assign shape = image.height | times: 1.0 | divided_by: image.width %}
       {% assign number = forloop.index | plus: 1 %}
       {% if left <= right %}
         {% assign side = 'fragment-left' %}
-        {% assign left = left | plus: height %}
+        {% assign left = shape | times: 0.61 | plus: 0.067 | plus: left %}
+        {% assign sizes = '(min-width: 960px) 529px, (min-width: 768px) calc(61vw - 38px), calc(100vw - 30px)' %}
       {% else %}
         {% assign side = 'fragment-right' %}
-        {% assign right = right | plus: height %}
+        {% assign right = shape | times: 0.39 | plus: 0.067 | plus: right %}
+        {% assign sizes = '(min-width: 960px) 339px, (min-width: 768px) calc(39vw - 24px), calc(100vw - 30px)' %}
       {% endif %}
-      {%
-        include fragment.liquid photo=photo number=number loading="lazy" class=side
-        sizes="(min-width: 960px) 434px, (min-width: 768px) calc(50vw - 31px), calc(100vw - 30px)"
-      %}
+      {% include fragment.liquid photo=photo number=number loading="lazy" class=side sizes=sizes %}
     {% endfor %}
   </div>
 </section>
