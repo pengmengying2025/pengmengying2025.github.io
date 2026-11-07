@@ -7,13 +7,13 @@ intro: "A few little moments from walks, hikes, and travels.\u00A0📸"
 photos:
   - id: grand-canyon
     source: grand canyon.jpg
-    title: Grand Canyon
-    place: Arizona
+    title: Spring
+    place: Grand Canyon
     alt: The Colorado River winding between the layered red walls of the Grand Canyon at dusk.
 
   - id: peace
     source: peace.jpeg
-    title: Peace
+    title: Summer
     place: Lee Ufan Museum
     alt: A tall concrete arch on a grassy field by the sea at the Lee Ufan Museum, with one small figure in the distance.
 
