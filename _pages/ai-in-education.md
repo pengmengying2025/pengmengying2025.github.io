@@ -28,12 +28,12 @@ Related research: [Thinking Partner or Lookup Tool? How Students Use a Generativ
 
 <div class="product-card" markdown="1">
 
-<strong class="product-name">Math Wonder Island <span class="text-nowrap">(数学奇妙岛)</span></strong> — AI math tutoring platform for primary-school students (Grades 1–6)
+<strong class="product-name">AI Math Tutoring Platform</strong>
 {: .product-heading}
 
-*Lead developer & research designer · 2026–present · Currently in closed beta*
+*Lead developer & research designer · 2026–present · In development*
 {: .product-meta}
 
-A personalized AI math learning platform for primary-school students in China. Outstanding Project, 2026 “Chunhui Cup” (Ministry of Education of China).
+A personalized math learning platform for primary-school students (Grades 1–6) in China.
 
 </div>

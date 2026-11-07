@@ -27,6 +27,7 @@ _Last updated: 2026-11-06_
 ## ⏳ To do
 
 - **Around 2026-08-01** (~2 weeks after migration): once the new Actions deployment is confirmed stable, the **`gh-pages` branch can be deleted** (currently kept as a rollback safety net).
+- 2026 年底：数学平台名称，以及 Google Antigravity 那条资助。
 - build job 临时固定在 ubuntu-24.04；长期方案是把 Ruby 从 3.3.5 升级到 ubuntu-latest 上可用的版本并完整测一次部署。
   - Together with the Ruby upgrade: `scripts/gen_cv.rb` fails at its last step on a fresh clone, because git does not track the empty `assets/pdf/`. One line of `FileUtils.mkdir_p` fixes it.
   - `Check for broken links on site` 因为 ubuntu-26.04 上没有 Ruby 3.2.2 一直失败，线上链接检查实际上没在跑，升级 Ruby 时一起修。axe 只能手动触发，从没跑过，无障碍检查也没在跑；它的 Ruby 设置相同，升级时一起改，要自动跑还得另外打开触发条件。
